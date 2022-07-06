@@ -14,6 +14,6 @@ export const useFetchQuote = () => {
     });
   }, []);
 
-  console.log("The state", state);
+//   console.log("The state", state);
   return state;
 };

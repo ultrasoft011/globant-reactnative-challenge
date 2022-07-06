@@ -13,6 +13,6 @@ export const getQuotesApi = async () => {
     };
   });
 
-  //   console.log("The quotes", quotes);
+    console.log("The quotes", quotes);
   return quotes;
 };
