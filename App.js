@@ -1,15 +1,19 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-import { useEffect, useState } from "react";
 
 import { useFetchQuote } from "./hooks/useFetchQuote";
+import { useState } from "react";
 
 export default function App() {
   const data = useFetchQuote();
+  // useState hook to update the state with quotes and characters
   const [quote, setQuote] = useState("Quotes are here..");
   const [character, setAuthor] = useState("Andrés Felipe Ballesteros");
+
+  // New arrays with the specific data
   let quoteMessage = data.map((element) => element.quote);
   let byAuthor = data.map((element) => element.character);
 
+  // Function to handle the quote press button
   const handleOnPress = () => {
     let number = Math.floor(Math.random() * data.length);
     console.log(number);
@@ -17,6 +21,7 @@ export default function App() {
     setAuthor(byAuthor[number]);
   };
 
+  // Function to get a random color to change button color
   const generateColor = () => {
     const randomColor = Math.floor(Math.random() * 16777215)
       .toString(16)
